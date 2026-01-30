@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+
+    @theme {
+        --color-background-1: rgba(248, 250, 252, 100%);
+        --color-background-2: rgba(255, 255, 255, 95%);
+
+        --color-green-1: rgba(4, 120, 87, 100%);
+        --color-green-2: rgba(236, 253, 245, 100%);
+        --color-green-3: rgba(209, 250, 229, 100%);
+        --color-green-4: rgba(16, 183, 127, 100%);
+        --color-green-5: rgba(5, 150, 105, 100%);
+        --color-green-6: rgba(236, 253, 245, 0.5);
+        --color-green-7: rgba(6, 95, 70, 100%);
+        --color-green-8: rgba(16, 185, 129, 100%);
+        --color-green-9: rgba(16, 185, 129, 20%);
+        --color-green-10: rgba(5, 150, 105, 70%);
+
+        --color-blue-text-1: rgba(15, 23, 42, 100%);
+
+        --color-navy-blue: rgba(20, 184, 166, 100%);
+
+        --color-purple-1: rgba(99, 102, 241, 100%);
+
+        --color-gray-text-1: rgba(100, 116, 139, 100%);
+        --color-gray-text-2: rgba(100, 116, 136, 100%);
+        --color-gray-text-3: rgba(71, 85, 105, 100%);
+        --color-gray-text-4: rgba(148, 163, 184, 100%);
+
+        --color-gray-border-1: rgba(226, 232, 240, 80%);
+
+        --color-icon-waller: rgba(226, 232, 240, 100%);
+        --color-icon-calendar: rgba(204, 251, 241, 100%);
+        --color-icon-saving: rgba(224, 231, 255, 100%);
+        
+
+        --default-font-family: "Inter", sans-serif;
+        --tracking-1: 0.075rem;
+
+        --shadow-card-1: 0 8px 32px 0 rgba(31, 38, 135, 7%);
+        --shadow-card-2: 0 4px 20px -2px rgba(0,0,0, 5%);
+    }
+
+
