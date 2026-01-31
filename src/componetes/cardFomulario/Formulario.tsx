@@ -1,3 +1,4 @@
+import type { DadosResumo } from '../../types/DadosResumo';
 import Tune from '../icons/Tune';
 import {
     Chart as ChartJS,
@@ -52,8 +53,13 @@ export const data = {
     ],
 };
 
-const Formulario = ({onChange, calculorCotas, Dados}:any) => {
+type Props = {
+  onChange: (dados: Partial<DadosResumo>) => void;
+};
 
+const Formulario = ({ onChange, calculorCotas, Dados }: any) => {
+
+    
     // const [isChecked, setIsChecked] = useState(Dados.ReinvestingDividends);
     // const handleChange = (event:any) => {
     //     // Para checkboxes, use event.target.checked para obter o valor booleano
@@ -78,10 +84,10 @@ const Formulario = ({onChange, calculorCotas, Dados}:any) => {
                         <div className='focus-within:text-green-8 text-gray-text-3 transition-all'>
                             <label className='block uppercase  font-bold text-[12px] leading-4 tracking-[0.3px] '>
                                 <span >Quantidade de Cotas/Ações</span>
-                                <input type="number" id='quantity' placeholder={Dados.quantity} 
-                                onChange={e => 
-                                    onChange({quantity: Number(e.target.value)})
-                                }
+                                <input type="number" id='quantity' placeholder={Dados.quantity}
+                                    onChange={e =>
+                                        onChange({ quantity: Number(e.target.value) })
+                                    }
                                     className='  mt-2 w-full px-4 py-3 bg-background-1 border rounded-xl border-gray-border-1 placeholder:text-gray-text-4 font-medium text-[1rem] leading-4 tracking-[-0.4px] focus:outline-none focus:border-green-8 ' />
                             </label>
                             <p className='pt-1 font-semibold text-[10px] text-gray-text-4 tracking-[-0.25px]'>Valor total: R$ {calculorCotas()}</p>
@@ -92,9 +98,11 @@ const Formulario = ({onChange, calculorCotas, Dados}:any) => {
                                 <span>Último Dividendo por Cota</span>
                                 <div className='flex items-center relative mt-2'>
                                     <span className='text-[1rem] font-semibold text-gray-text-4 absolute l left-4'>R$</span>
-                                    <input type="number" id='dividendo' placeholder={Dados.lastDividend} 
-                                    
-                                    className='block  w-full pl-12 pr-4 py-3 bg-background-1 border rounded-xl border-gray-border-1 placeholder:text-gray-text-4 font-medium text-[16px] leading-4 tracking-[-0.4px] focus:outline-none focus:border-green-8 ' />
+                                    <input type="number" id='dividendo' placeholder={Dados.lastDividend}
+                                        onChange={e =>
+                                            onChange({ lastDividend: Number(e.target.value) })
+                                        }
+                                        className='block  w-full pl-12 pr-4 py-3 bg-background-1 border rounded-xl border-gray-border-1 placeholder:text-gray-text-4 font-medium text-[16px] leading-4 tracking-[-0.4px] focus:outline-none focus:border-green-8 ' />
                                 </div>
                             </label>
                         </div>
@@ -104,11 +112,10 @@ const Formulario = ({onChange, calculorCotas, Dados}:any) => {
                                 <span>PREÇO DA COTA/AÇÃO</span>
                                 <div className='flex items-center relative mt-2'>
                                     <span className='text-[1rem] font-semibold text-gray-text-4 absolute l left-4'>R$</span>
-                                    <input type="number" id='priceCota' placeholder={Dados.priceCota} 
-                                    onChange={e => 
-                                    onChange({priceCota: Number(e.target.value)})
-                                }   
-                                    className='block  w-full pl-12 pr-4 py-3 bg-background-1 border rounded-xl border-gray-border-1 placeholder:text-gray-text-4 font-medium text-[16px] leading-4 tracking-[-0.4px] focus:outline-none focus:border-green-8 ' />
+                                    <input type="number" id='priceCota' placeholder={Dados.priceCota}
+                                        onChange={e =>
+                                            onChange({ priceCota: Number(e.target.value)})}
+                                        className='block  w-full pl-12 pr-4 py-3 bg-background-1 border rounded-xl border-gray-border-1 placeholder:text-gray-text-4 font-medium text-[16px] leading-4 tracking-[-0.4px] focus:outline-none focus:border-green-8 ' />
                                 </div>
                             </label>
                         </div>
@@ -118,7 +125,10 @@ const Formulario = ({onChange, calculorCotas, Dados}:any) => {
                                 <span>APORTE MENSAL</span>
                                 <div className='flex items-center relative mt-2'>
                                     <span className='text-[1rem] font-semibold text-gray-text-4 absolute l left-4'>R$</span>
-                                    <input type="number" id='aporte' placeholder={Dados.monthlyContribution} className='block  w-full pl-12 pr-4 py-3 bg-background-1 border rounded-xl border-gray-border-1 placeholder:text-gray-text-4 font-medium text-[16px] leading-4 tracking-[-0.4px] focus:outline-none focus:border-green-8 ' />
+                                    <input type="number" id='aporte' placeholder={Dados.monthlyContribution}
+                                        onChange={e =>
+                                            onChange({ monthlyContribution: Number(e.target.value)})}
+                                        className='block  w-full pl-12 pr-4 py-3 bg-background-1 border rounded-xl border-gray-border-1 placeholder:text-gray-text-4 font-medium text-[16px] leading-4 tracking-[-0.4px] focus:outline-none focus:border-green-8 ' />
                                 </div>
                             </label>
                         </div>
@@ -127,7 +137,10 @@ const Formulario = ({onChange, calculorCotas, Dados}:any) => {
                             <label className='block uppercase  font-bold text-[12px] leading-4 tracking-[0.3px]'>
                                 <span>PERÍODO (ANOS)</span>
                                 <div className='flex items-center mt-2'>
-                                    <input type="number" id='periodo' placeholder={Dados.period} className='block  w-full px-4 py-3 bg-background-1 border rounded-xl border-gray-border-1 placeholder:text-gray-text-4 font-medium text-[16px] leading-4 tracking-[-0.4px] focus:outline-none focus:border-green-8 ' />
+                                    <input type="number" id='periodo' placeholder={Dados.period}
+                                        onChange={e =>
+                                            onChange({ period: Number(e.target.value) })}
+                                        className='block  w-full px-4 py-3 bg-background-1 border rounded-xl border-gray-border-1 placeholder:text-gray-text-4 font-medium text-[16px] leading-4 tracking-[-0.4px] focus:outline-none focus:border-green-8 ' />
                                 </div>
                             </label>
                         </div>
