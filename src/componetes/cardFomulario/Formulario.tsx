@@ -1,4 +1,3 @@
-import type { Dados } from '../../types/Dados';
 import Tune from '../icons/Tune';
 import {
     Chart as ChartJS,
@@ -51,10 +50,6 @@ export const data = {
             backgroundColor: 'rgba(53, 162, 235, 0.5)',
         },
     ],
-};
-
-type Props = {
-  onChange: (dados: Partial<Dados>) => void;
 };
 
 const Formulario = ({onChange, calculorCotas, Dados}:any) => {
