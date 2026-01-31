@@ -1,4 +1,3 @@
-import type { DadosResumo } from '../../types/DadosResumo';
 import Tune from '../icons/Tune';
 import {
     Chart as ChartJS,
@@ -53,9 +52,6 @@ export const data = {
     ],
 };
 
-type Props = {
-  onChange: (dados: Partial<DadosResumo>) => void;
-};
 
 const Formulario = ({ onChange, calculorCotas, Dados }: any) => {
 
